@@ -33,6 +33,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>E:\Workspace\Kumakubo\Documents\RBS_a32kita\ShimekiriSaver\ShimekiriSaver\win32res\win32res.res</Win32Resource>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="MainClass.cs" />
     <Compile Include="MainForm.cs">
@@ -71,6 +74,15 @@
     <Content Include="ShimekiriSaver.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="win32res\resource.h" />
+    <Content Include="win32res\win32res.rc" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)..\..\SDK\ScopeCppSDK\SDK\bin\rc.exe" /r "$(ProjectDir)win32res\win32res.rc"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "$(TargetDir)$(TargetName).scr"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

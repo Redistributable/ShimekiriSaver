@@ -58,7 +58,7 @@ namespace ShimekiriSaver
             if (diff.TotalSeconds < 0)
                 return this.name + " は終了しました";
             else
-                return this.name + " まで " + diff.TotalDays.ToString("00") + "日" + diff.Hours.ToString("00") + "時間" + diff.Minutes.ToString("00") + "分" + diff.Seconds.ToString("00") + "秒";
+                return this.name + " まで " + diff.Days.ToString("00") + "日" + diff.Hours.ToString("00") + "時間" + diff.Minutes.ToString("00") + "分" + diff.Seconds.ToString("00") + "秒";
         }
 
 
